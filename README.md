@@ -10,17 +10,17 @@ Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
 Our dataset includes 80 fields spanning over 11 categories which are,
 
-•  Time Period
-•  Airline
-•  Origin
-•  Destination
-•  Departure Performance
-•  Arrival Performance
-•  Cancellation and Diversion
-•  Flight Summaries
-•  Cause of delay
-•  Gate return information at origin airport
-•  Diverted airport information
+- Time Period
+- Airline
+- Origin
+- Destination
+- Departure Performance
+- Arrival Performance
+- Cancellation and Diversion
+- Flight Summaries
+- Cause of delay
+- Gate return information at origin airport
+- Diverted airport information
 
 From the original Data set, we have extracted data that are significant for our analysis,
 
@@ -182,11 +182,11 @@ The above pie chart depicts the effect of each type of delays in our data set. B
 
 To obtain a meaningful and efficient ranking system the following data were considered:
 
-•  Number of airlines for each carrier (flight volume).
-•  Speed of the aircrafts in mph.
-•  Ratio between operated flights and scheduled flights.
-•  Taxi in and Taxi out time (time to leave and enter the gate).
-•  The average arrival delay.
+-  Number of airlines for each carrier (flight volume).
+-  Speed of the aircrafts in mph.
+-  Ratio between operated flights and scheduled flights.
+-  Taxi in and Taxi out time (time to leave and enter the gate).
+-  The average arrival delay.
 
 We have not included avg. departure delay because usually it depends on the departure airport.
 The above data was used to obtain a ratio which indicated a score for the aircrafts rankings. The
@@ -215,7 +215,7 @@ directly proportional to Score and the values of b were inversely proportional t
 ![Image31](viz/fullmap.png)
 
 ### PLOTTING OF ROUTES WITH NO DELAYS
-![Image32](viz/no delay.png)
+![Image32](viz/no_delay.png)
 
 ### DISTANCE AGAINST ARRIVAL AND DEPRATURE DELAYS
 ![Image40](viz/delaydist.png)
@@ -414,11 +414,11 @@ formula for calculating score on normalized data which we scaled between 1 and 2
 
 Where,
 
-- a = (RATIO_OP_SCH) * (FLIGHT_SPEED) * (FLIGHTS_VOLUME) and
+ `a = (RATIO_OP_SCH) * (FLIGHT_SPEED) * (FLIGHTS_VOLUME)` and
 
-- b = (ARRIVAL_DELAY) * (TAXI_IN) * (TAXI_OUT)
+`b = (ARRIVAL_DELAY) * (TAXI_IN) * (TAXI_OUT)`
 
-Score = a/(1+b),
+#### `Score = a/(1+b)`
 
 A higher score indicates a better rank.
 
@@ -426,17 +426,17 @@ A higher score indicates a better rank.
 
 Based on the score, below are our ranking of Carriers, to and from Texas, Operated during Jan 2017.
 
-- Southwest Airlines Co.
-- United Air Lines Inc.
-- Alaska Airlines Inc.
-- American Airlines Inc.
-- Virgin America
-- Delta Air Lines Inc.
-- JetBlue Airways
-- Spirit Air Lines
-- SkyWest Airlines Inc.
-- ExpressJet Airlines Inc.
-- Frontier Airlines Inc.
+- 1. Southwest Airlines Co.
+- 2. United Air Lines Inc.
+- 3. Alaska Airlines Inc.
+- 4. American Airlines Inc.
+- 5. Virgin America
+- 6. Delta Air Lines Inc.
+- 7. JetBlue Airways
+- 8. Spirit Air Lines
+- 9. SkyWest Airlines Inc.
+- 10. ExpressJet Airlines Inc.
+- 11. Frontier Airlines Inc.
 
 ![Image75](viz/rank.png)
 

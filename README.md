@@ -1,6 +1,6 @@
 # Airline Ranking - TEXAS Jan 2017
 
-Insights on causes of flight delays and implementation of Airline carrier ranking system based
+Insights on causes of flight delays and implementation of Airline carrier ranking (quality of service) system based
 
 on data on flights to and from Texas from Bureau of Transportation during Jan 2017.
 
@@ -180,7 +180,7 @@ The above pie chart depicts the effect of each type of delays in our data set. B
 
 ## RANKING SYSTEM
 
-To obtain a meaningful and efficient ranking system the following data were considered:
+To obtain a meaningful and efficient ranking (quality of service) system the following data were considered:
 
 -  Number of airlines for each carrier (flight volume).
 -  Speed of the aircrafts in mph.
@@ -424,7 +424,7 @@ A higher score indicates a better rank.
 
 ### RANKING
 
-Based on the score, below are our ranking of Carriers, to and from Texas, Operated during Jan 2017.
+Based on the score, below are our ranking (quality of service) of Carriers, to and from Texas, Operated during Jan 2017.
 
 - 1. Southwest Airlines Co.
 - 2. United Air Lines Inc.

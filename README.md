@@ -174,7 +174,7 @@ minutes at screening areas.
 Weather delay is caused by extreme or hazardous weather conditions that are forecasted or
 manifest themselves on point of departure, enroute, or on point of arrival.
 
-![Image24](viz/contrib_delay.png)
+![Image24](vizl/contrib_delay.png)
 
 The above pie chart depicts the effect of each type of delays in our data set. Based onthe  above analysis, the late aircraft delay (38.6%), the  Carrier delay (34%)  and NASdelay  (22.6%)  consists  of  most  of  the  delays.  It  is  important  that  the  delays  due  toweather  conditions  is  4.8%  which  is  significantly  less.  Both  Late  Aircraft  delay  andCarrier delays are directly connected to the performance of carrier, so it is evident thatthis  analysis  can  provide  insights  for  the  evaluation  of  carrier  and  can  be  used  forfurther improvement.
 
@@ -212,25 +212,25 @@ directly proportional to Score and the values of b were inversely proportional t
 ## INSIGHTS AND ANALYSIS
 
 ### PLOTTING AIRLINE ROUTE OF ENTIRE DATASET
-![Image31](viz/fullmap.png)
+![Image31](vizl/fullmap.png)
 
 ### PLOTTING OF ROUTES WITH NO DELAYS
-![Image32](viz/no_delay.png)
+![Image32](vizl/no_delay.png)
 
 ### DISTANCE AGAINST ARRIVAL AND DEPRATURE DELAYS
-![Image40](viz/delaydist.png)
+![Image40](vizl/delaydist.png)
 
 From the graph, it is evident that distance of flight doesn’t have much impact on the delays, even 
 though lower distance flight shows relatively higher delay. There for, we can assume that longer
 flights might have makeup the delayed minutes during flight.
 
 ### SCHEDULED VS ELAPSED TIME OF FLIGHT
-![Image43](viz/elapsed.png)
+![Image43](vizl/elapsed.png)
 
 From the Graph, we can see that all carriers have completed the flight before scheduled time.
 
 ### TOTAL SCHEDULED VS CANCELLED
-![Image46](viz/cancellation.png)
+![Image46](vizl/cancellation.png)
 
 Expresjet Airline and Frontier Airlines has the highest rate of cancellation, which later going to effect
 on their rank. From the graph, we can see that American Airlines and Southwest have significant
@@ -243,28 +243,28 @@ From the above bar chart, in each category of delay; American Airlines, Alaskan 
 and Southwest airlines has scored very less delays. Fortier Airlines has very high late aircraft delay,
 which should be handled and Spirit Airlines has the peek NAS delay which is very less for all other
 carriers (they must have investigated on this issue).
-![Image49](viz/delay vs car.png)
+![Image49](vizl/delay vs car.png)
 
 From the below graph, it is evident that Fortier airlines has the highest sum of average of all delays.
 And Alaskan Airlines and southwest airlines has lowest.
-![Image50](viz/delaybycar.png)
+![Image50](vizl/delaybycar.png)
 
 ### PERFORMANCE BASED ON ARRIVAL DELAY
-![Image53](viz/performance.png)
+![Image53](vizl/performance.png)
 
 Above, performance graph show that Delta Airlines, united airlines have higher percentage of on
 time or early arrival with around 70%. Forntier airlines and skywest Airlines are the low scorers with
 around 50% of on time or early arrival.
 
 ### FLIGHT VOLUME / TOTAL NUMBER OF FLIGHTS FROM EACH CARRIER
-![Image56](viz/flightvolume.png)
+![Image56](vizl/flightvolume.png)
 
 We can see that American Airlines (30.4%) and Southwest airlines (28.3 %) together have the  lion
 share of flights to and from TEXAS. Frontier Airlines and JetBlue Airways have the least number of
 flights.
 
 ### FLIGHT SPEED
-![Image59](viz/flyspeed.png)
+![Image59](vizl/flyspeed.png)
 
 Based on the violin plot, we can see that in average, most flying speed across airlines are close to
 400~450 miles per hour; with the ExpressJet Airlines Inc. is the slowest airline and large variation (by
@@ -273,7 +273,7 @@ It is interesting to see that, in some rare cases, an aircraft can go as high as
 average during a flight trip.
 
 ### AVERAGE ARRIVAL DELAY VS DEPARTURE DELAY
-![Image62](viz/arrvsdep.png)
+![Image62](vizl/arrvsdep.png)
 
 Based on this analysis, we can see that all the lines have longer departure delays than arrival delays,
 Frontier Airlines have both delays equal and high. We can say that the flights can adjust speed to
@@ -283,13 +283,13 @@ worth noting that Alaska Airlines is the only airline among all to arrive the de
 scheduled in average.
 
 ### RATIO OF OPERATED AND SCHEDULED FLIGHTS
-![Image65](viz/ratio_sch_op.png)
+![Image65](vizl/ratio_sch_op.png)
 
 From the graph, we can see that about 98% of scheduled flights are operated, with Expressjet Airlines
 with the lowest and Alaskan Airlines with the highest.
 
 ### MEAN TAXI IN AND TAXI OUT
-![Image68](viz/taxi.png)
+![Image68](vizl/taxi.png)
 
 Interestingly, we can see that overall taxi in time is less than taxi out time for all the airlines. All airlines
 have an average taxi_in time less than 10 minutes except Frontier Airlines, while all taxi out time are
@@ -438,13 +438,10 @@ Based on the score, below are our ranking of Carriers, to and from Texas, Operat
 - 10. ExpressJet Airlines Inc.
 - 11. Frontier Airlines Inc.
 
-![Image75](viz/rank.png)
+![Image75](vizl/rank.png)
 
 Based on the data, Analysis and visualization we concluded that Southwest Airlines outperformed all
 other carriers and secured rank 1.
 
 This lower scored carrier can improve their performance based on this insight and increase quality of
 service and thereby gain customer satisfaction.
-
-
-

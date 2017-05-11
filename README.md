@@ -1,42 +1,32 @@
 # Airline Ranking - TEXAS Jan 2017
 
-- Insights on causes of flight delays and implementation of Airline carrier ranking system based
+Insights on causes of flight delays and implementation of Airline carrier ranking system based
 
-- on data on flights to and from Texas from Bureau of Transportation during Jan 2017.
+on data on flights to and from Texas from Bureau of Transportation during Jan 2017.
 
-- Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
+Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
-- DATASET AND ATTRIBUTES
+DATASET AND ATTRIBUTES
 
-- Our dataset includes 80 fields spanning over 11 categories which are,
+Our dataset includes 80 fields spanning over 11 categories which are,
 
 •  Time Period
-
 •  Airline
-
 •  Origin
-
 •  Destination
-
 •  Departure Performance
-
 •  Arrival Performance
-
 •  Cancellation and Diversion
-
 •  Flight Summaries
-
 •  Cause of delay
-
 •  Gate return information at origin airport
-
 •  Diverted airport information
 
-- From the original Data set, we have extracted data that are significant for our analysis,
+From the original Data set, we have extracted data that are significant for our analysis,
 
-- after that the reduced data set contained, 80988 Rows and 26 Fields.
+after that the reduced data set contained, 80988 Rows and 26 Fields.
 
-- FIELDS
+FIELDS
 
 <table align="center">
 	<tr align="center">
@@ -149,251 +139,166 @@
 	</tr>
 </table>
 
-- TYPES OF DELAY
+TYPES OF DELAY
 
-- ASPM records minutes of delay for five possible causes of flight arrival delays: carrier, weather,
+ASPM records minutes of delay for five possible causes of flight arrival delays: carrier, weather,
+NAS, security, and late arrival. The data are provided by the Bureau of Transportation Statistics(BTS)
+for  ASQP  flights  only.  These  causes  of  delay  were  determined  by  the  Department  of
+Transportation.
 
-- NAS, security, and late arrival. The data are provided by the Bureau of Transportation Statistics
+CARRIER DELAY
+Carrier  delay  is  within  the  control  of  the  air  carrier.  Examples  of  occurrences  that  may
+determine  carrier  delay  are:  aircraft  cleaning,  aircraft  damage,  awaiting  the  arrival  of
+connecting passengers or crew, baggage, bird strike, cargo loading, catering, computer, outage
+carrier  equipment,  crew  legality  (pilot  or  attendant  rest),  damage  by  hazardous  goods,
+engineering  inspection,  fueling,  handling  disabled  passengers,  late  crew,  lavatory  servicing,
+maintenance, oversales, potable water servicing, removal of unruly passenger, slow boarding
+or seating, stowing carryon baggage, weight and balance delays.
 
-- (BTS)  for  ASQP  flights  only.  These  causes  of  delay  were  determined  by  the  Department  of
+LATE ARRIVAL DELAY
+Arrival delay at an airport due to the late arrival of the same aircraft at a previous airport. The
+ripple effect of an earlier delay at downstream airports is referred to as delay propagation.
 
-- Transportation.
+NAS DELAY
+Delay that is within the control of the National Airspace System (NAS) may include: nonextreme
+weather conditions, airport operations, heavy traffic volume, air traffic control, etc. Delays that
+occur after Actual Gate Out are usually attributed to the NAS and are also reported through
+OPSNET.
 
-- CARRIER DELAY
+SECURITY DELAY
+Security  delay  is  caused  by  evacuation  of  a  terminal  or  concourse,  reboarding  of  aircraft
+because of security breach, inoperative screening equipment and/or long lines more than 29
+minutes at screening areas.
+WEATHER DELAY
+Weather delay is caused by extreme or hazardous weather conditions that are forecasted or
+manifest themselves on point of departure, enroute, or on point of arrival.
 
-- Carrier  delay  is  within  the  control  of  the  air  carrier.  Examples  of  occurrences  that  may
-
-- determine  carrier  delay  are:  aircraft  cleaning,  aircraft  damage,  awaiting  the  arrival  of
-
-- connecting passengers or crew, baggage, bird strike, cargo loading, catering, computer, outage-
-
-- carrier  equipment,  crew  legality  (pilot  or  attendant  rest),  damage  by  hazardous  goods,
-
-- engineering  inspection,  fueling,  handling  disabled  passengers,  late  crew,  lavatory  servicing,
-
-- maintenance, oversales, potable water servicing, removal of unruly passenger, slow boarding
-
-- or seating, stowing carry-on baggage, weight and balance delays.
-
-- LATE ARRIVAL DELAY
-
-- Arrival delay at an airport due to the late arrival of the same aircraft at a previous airport. The
-
-- ripple effect of an earlier delay at downstream airports is referred to as delay propagation.
-
-- NAS DELAY
-
-- Delay that is within the control of the National Airspace System (NAS) may include: non-extreme
-
-- weather conditions, airport operations, heavy traffic volume, air traffic control, etc. Delays that
-
-- occur after Actual Gate Out are usually attributed to the NAS and are also reported through
-
-- OPSNET.
-
-- SECURITY DELAY
-
-- Security  delay  is  caused  by  evacuation  of  a  terminal  or  concourse,  re-boarding  of  aircraft
-
-- because of security breach, inoperative screening equipment and/or long lines more than 29
-
-- minutes at screening areas.
-
-- WEATHER DELAY
-
-- Weather delay is caused by extreme or hazardous weather conditions that are forecasted or
-
-- manifest themselves on point of departure, enroute, or on point of arrival.
-
-![Image24](images/Image24)
+![Image24](viz/contrib_delay.png)
 
 The above pie chart depicts the effect of each type of delays in our data set. Based onthe  above analysis, the late aircraft delay (38.6%), the  Carrier delay (34%)  and NASdelay  (22.6%)  consists  of  most  of  the  delays.  It  is  important  that  the  delays  due  toweather  conditions  is  4.8%  which  is  significantly  less.  Both  Late  Aircraft  delay  andCarrier delays are directly connected to the performance of carrier, so it is evident thatthis  analysis  can  provide  insights  for  the  evaluation  of  carrier  and  can  be  used  forfurther improvement.
 
-- RANKING SYSTEM
+RANKING SYSTEM
 
-- To obtain a meaningful and efficient ranking system the following data were considered:
+To obtain a meaningful and efficient ranking system the following data were considered:
 
 •  Number of airlines for each carrier (flight volume).
-
 •  Speed of the aircrafts in mph.
-
 •  Ratio between operated flights and scheduled flights.
-
 •  Taxi in and Taxi out time (time to leave and enter the gate).
-
 •  The average arrival delay.
 
-- We have not included avg. departure delay because usually it depends on the departure airport.
+We have not included avg. departure delay because usually it depends on the departure airport.
+The above data was used to obtain a ratio which indicated a score for the aircrafts rankings. The
+aircrafts  airtime  was  used  to obtain  the  speed  of  flight.  After  analyzing  the  speed  of  all  the
+aircrafts,  we  found  their  averages  to  be  between  400  and  500  mph.  The  distance  between
+source  and  destinations  were  plotted  using  the  arrival  delay  and  departure  delays.  As  an
+inference, we came to understand that delay was comparatively higher during short distance
+travels. Long distance flights experienced shorter delays. To an extent distance did not affect
+the flight delay.
+After analyzing the causes of delay -weather delays were almost 4.8% and was the least. The
+maximum  delays  were  caused  by  late  aircraft  delay  and  carrier  delay  (due  to  aircraft
+maintenance) and was near to 70% together.
+All  the  values  were  rescaled  and  normalized  using min_max  scaler  and  thus  all  values  were
+between 0 and 1. Due to properties of our ranking system we rescaled between 1 and 2. To
+obtain the final ranking, we used a score variable comparing 6 variables which was in turn used
+to check the ranking status. I.e. a higher score would lead to a higher ranking which means the
+scheduled flight was operated correctly without any delays.
+ Score= a /(1+b)
+where a is the product of operated flights, total volume of flights and the flight speed and b is
+the product of arrival delay, average taxi in and taxi out times. The values of variable a were
+directly proportional to Score and the values of b were inversely proportional to score.
+
+INSIGHTS AND ANALYSIS
+
+PLOTTING AIRLINE ROUTE OF ENTIRE DATASET
+![Image31](viz/fullmap.png)
+
+PLOTTING OF ROUTES WITH NO DELAYS
+![Image32](viz/no delay.png)
+
+DISTANCE AGAINST ARRIVAL AND DEPRATURE DELAYS
+![Image40](viz/delaydist.png)
+
+From the graph, it is evident that distance of flight doesn’t have much impact on the delays, even 
+though lower distance flight shows relatively higher delay. There for, we can assume that longer
+flights might have makeup the delayed minutes during flight.
+
+SCHEDULED VS ELAPSED TIME OF FLIGHT
+![Image43](viz/elapsed.png)
+
+From the Graph, we can see that all carriers have completed the flight before scheduled time.
+
+TOTAL SCHEDULED VS CANCELLED
+![Image46](viz/cancellation.png)
+
+Expresjet Airline and Frontier Airlines has the highest rate of cancellation, which later going to effect
+on their rank. From the graph, we can see that American Airlines and Southwest have significant
+amount of flights and very less cancellation. From these we can say that their service quality is high
+and they will be securing high ranks.
+
+DELAY CATEGORIES OF EACH CARRIER
+
+From the above bar chart, in each category of delay; American Airlines, Alaskan Airlines, United Airlines
+and Southwest airlines has scored very less delays. Fortier Airlines has very high late aircraft delay,
+which should be handled and Spirit Airlines has the peek NAS delay which is very less for all other
+carriers (they must have investigated on this issue).
+![Image49](viz/delay vs car.png)
+
+From the below graph, it is evident that Fortier airlines has the highest sum of average of all delays.
+And Alaskan Airlines and southwest airlines has lowest.
+![Image50](viz/delaybycar.png)
+
+PERFORMANCE BASED ON ARRIVAL DELAY
+![Image53](viz/performance.png)
+
+Above, performance graph show that Delta Airlines, united airlines have higher percentage of on
+time or early arrival with around 70%. Forntier airlines and skywest Airlines are the low scorers with
+around 50% of on time or early arrival.
+
+FLIGHT VOLUME / TOTAL NUMBER OF FLIGHTS FROM EACH CARRIER
+![Image56](viz/flightvolume.png)
+
+We can see that American Airlines (30.4%) and Southwest airlines (28.3 %) together have the  lion
+share of flights to and from TEXAS. Frontier Airlines and JetBlue Airways have the least number of
+flights.
+
+FLIGHT SPEED
+![Image59](viz/flyspeed.png)
+
+Based on the violin plot, we can see that in average, most flying speed across airlines are close to
+400~450 miles per hour; with the ExpressJet Airlines Inc. is the slowest airline and large variation (by
+simply looking at the data shape distribution). The fastest service is offered by Alaskan Airlines.
+It is interesting to see that, in some rare cases, an aircraft can go as high as 800 miles per hour in
+average during a flight trip.
+
+AVERAGE ARRIVAL DELAY VS DEPARTURE DELAY
+![Image62](viz/arrvsdep.png)
+
+Based on this analysis, we can see that all the lines have longer departure delays than arrival delays,
+Frontier Airlines have both delays equal and high. We can say that the flights can adjust speed to
+catch up time while departure delay sometimes are out of control.
+Skywest Airlines and Frontier Airlines are among the longest arrival and departure delay airlines. It is
+worth noting that Alaska Airlines is the only airline among all to arrive the destination earlier than
+scheduled in average.
+
+RATIO OF OPERATED AND SCHEDULED FLIGHTS
+![Image65](viz/ratio_sch_op.png)
+
+From the graph, we can see that about 98% of scheduled flights are operated, with Expressjet Airlines
+with the lowest and Alaskan Airlines with the highest.
+
+MEAN TAXI IN AND TAXI OUT
+![Image68](viz/taxi.png)
 
-- The above data was used to obtain a ratio which indicated a score for the aircrafts rankings. The
+Interestingly, we can see that overall taxi in time is less than taxi out time for all the airlines. All airlines
+have an average taxi_in time less than 10 minutes except Frontier Airlines, while all taxi out time are
+greater than 10 minutes. Also, it seems Southwest has the shortest taxi-in and taxi-out.
 
-- aircrafts  airtime  was  used  to obtain  the  speed  of  flight.  After  analyzing  the  speed  of  all  the
+ANALYSIS RESULT
 
-- aircrafts,  we  found  their  averages  to  be  between  400  and  500  mph.  The  distance  between
-
-- source  and  destinations  were  plotted  using  the  arrival  delay  and  departure  delays.  As  an
-
-- inference, we came to understand that delay was comparatively higher during short distance
-
-- travels. Long distance flights experienced shorter delays. To an extent distance did not affect
-
-- the flight delay.
-
-- After analyzing the causes of delay -weather delays were almost 4.8% and was the least. The
-
-- maximum  delays  were  caused  by  late  aircraft  delay  and  carrier  delay  (due  to  aircraft
-
-- maintenance) and was near to 70% together.
-
-- All  the  values  were  rescaled  and  normalized  using min_max  scaler  and  thus  all  values  were
-
-- between 0 and 1. Due to properties of our ranking system we rescaled between 1 and 2. To
-
-- obtain the final ranking, we used a score variable comparing 6 variables which was in turn used
-
-- to check the ranking status. I.e. a higher score would lead to a higher ranking which means the
-
-- scheduled flight was operated correctly without any delays.
-
-- Score= a /(1+b)
-
-- where a is the product of operated flights, total volume of flights and the flight speed and b is
-
-- the product of arrival delay, average taxi in and taxi out times. The values of variable a were
-
-- directly proportional to Score and the values of b were inversely proportional to score.
-
-- INSIGHTS AND ANALYSIS
-
-- PLOTTING AIRLINE ROUTE OF ENTIRE DATASET
-
-- PLOTTING OF ROUTES WITH NO DELAYS
-
-![Image31](images/Image31)
-
-![Image32](images/Image32)
-
-- DISTANCE AGAINST ARRIVAL AND DEPRATURE DELAYS
-
-- From the graph, it is evident that distance of flight doesn’t have much impact on the delays, even
-
-- though lower distance flight shows relatively higher delay. There for, we can assume that longer
-
-- flights might have makeup the delayed minutes during flight.
-
-![Image40](images/Image40)
-
-- SCHEDULED VS ELAPSED TIME OF FLIGHT
-
-- From the Graph, we can see that all carriers have completed the flight before scheduled time.
-
-![Image43](images/Image43)
-
-- TOTAL SCHEDULED VS CANCELLED
-
-- Expresjet Airline and Frontier Airlines has the highest rate of cancellation, which later going to effect
-
-- on their rank. From the graph, we can see that American Airlines and Southwest have significant
-
-- amount of flights and very less cancellation. From these we can say that their service quality is high
-
-- and they will be securing high ranks
-
-![Image46](images/Image46)
-
-- DELAY CATEGORIES OF EACH CARRIER
-
-- From the above bar chart, in each category of delay American Airlines, Alaskan Airlines, United Airlines
-
-- and Southwest airlines has scored very less delays. Fortier Airlines has very high late aircraft delay,
-
-- which should be handled and Spirit Airlines has the peek NAS delay which is very less for all other
-
-- carriers (they must have investigated on this issue).
-
-- From the below graph, it is evident that Fortier airlines has the highest sum of average of all delays.
-
-- And Alaskan Airlines and southwest airlines has lowest.
-
-![Image49](images/Image49)
-
-![Image50](images/Image50)
-
-- PERFORMANCE BASED ON ARRIVAL DELAY
-
-- Above, performance graph show that Delta Airlines, united airlines have higher percentage of on
-
-- time or early arrival with around 70%. Forntier airlines and skywest Airlines are the low scorers with
-
-- around 50% of on time or early arrival.
-
-![Image53](images/Image53)
-
-- FLIGHT VOLUME / TOTAL NUMBER OF FLIGHTS FROM EACH CARRIER
-
-- We can see that American Airlines (30.4%) and Southwest airlines (28.3 %) together have the  lion
-
-- share of flights to and from TEXAS. Frontier Airlines and JetBlue Airways have the least number of
-
-- flights.
-
-![Image56](images/Image56)
-
-- FLIGHT SPEED
-
-- Based on the violin plot, we can see that in average, most flying speed across airlines are close to
-
-- 400~450 miles per hour; with the ExpressJet Airlines Inc. is the slowest airline and large variation (by
-
-- simply looking at the data shape distribution). The fastest service is offered by Alaskan Airlines.
-
-- It is interesting to see that, in some rare cases, an aircraft can go as high as 800 miles per hour in
-
-- average during a flight trip.
-
-![Image59](images/Image59)
-
-- AVERAGE ARRIVAL DELAY VS DEPARTURE DELAY
-
-- Based on this analysis, we can see that all the lines have longer departure delays than arrival delays,
-
-- Frontier Airlines have both delays equal and high. We can say that the flights can adjust speed to
-
-- catch up time while departure delay sometimes are out of control.
-
-- Skywest Airlines and Frontier Airlines are among the longest arrival and departure delay airlines. It is
-
-- worth noting that Alaska Airlines is the only airline among all to arrive the destination earlier than
-
-- scheduled in average.
-
-![Image62](images/Image62)
-
-- RATIO OF OPERATED AND SCHEDULED FLIGHTS
-
-- From the graph, we can see that about 98% of scheduled flights are operated, with Expressjet Airlines
-
-- with the lowest and Alaskan Airlines with the highest.
-
-![Image65](images/Image65)
-
-- MEAN TAXI IN AND TAXI OUT
-
-- Interestingly, we can see that overall taxi in time is less than taxi out time for all the airlines. All airlines
-
-- have an average taxi_in time less than 10 minutes except Frontier Airlines, while all taxi out time are
-
-- greater than 10 minutes. Also, it seems Southwest has the shortest taxi-in and taxi-out.
-
-![Image68](images/Image68)
-
-- ANALYSIS RESULT
-
-- We have 6 variables which decide  score. The score is proportional to a subset (a) of the variables
-
-- whereas being inversely proportional to a different subset (b) of the variables. We used the following
-
-- formula for calculating score on normalized data which we scaled between 1 and 2.
+We have 6 variables which decide  score. The score is proportional to a subset (a) of the variables
+whereas being inversely proportional to a different subset (b) of the variables. We used the following
+formula for calculating score on normalized data which we scaled between 1 and 2.
 
 <table align="center">
 	<tr align="center">
@@ -506,7 +411,7 @@ The above pie chart depicts the effect of each type of delays in our data set. B
 	</tr>
 </table>
 
-- Where,
+Where,
 
 - a = (RATIO_OP_SCH) * (FLIGHT_SPEED) * (FLIGHTS_VOLUME) and
 
@@ -514,43 +419,31 @@ The above pie chart depicts the effect of each type of delays in our data set. B
 
 Score = a/(1+b),
 
-- A higher score indicates a better rank.
+A higher score indicates a better rank.
 
-- RANKING
+RANKING
 
-- Based on the score, below are our ranking of Carriers, to and from Texas, Operated during Jan
-
-- 2017.
+Based on the score, below are our ranking of Carriers, to and from Texas, Operated during Jan 2017.
 
 - Southwest Airlines Co.
-
 - United Air Lines Inc.
-
 - Alaska Airlines Inc.
-
 - American Airlines Inc.
-
 - Virgin America
-
 - Delta Air Lines Inc.
-
 - JetBlue Airways
-
 - Spirit Air Lines
-
 - SkyWest Airlines Inc.
-
 - ExpressJet Airlines Inc.
-
 - Frontier Airlines Inc.
 
-- Based on the data, Analysis and visualization we concluded that Southwest Airlines outperformed all
+![Image75](viz/rank.png)
 
-- other carriers and secured rank 1.
+Based on the data, Analysis and visualization we concluded that Southwest Airlines outperformed all
+other carriers and secured rank 1.
 
-- This lower scored carrier can improve their performance based on this insight and increase quality of
-
-- service and gain customer satisfaction.
+This lower scored carrier can improve their performance based on this insight and increase quality of
+service and thereby gain customer satisfaction.
 
 <table align="center">
 	<tr align="center">
@@ -651,5 +544,5 @@ Score = a/(1+b),
 	</tr>
 </table>
 
-![Image75](images/Image75)
+
 

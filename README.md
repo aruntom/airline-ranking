@@ -6,7 +6,7 @@ on data on flights to and from Texas from Bureau of Transportation during Jan 20
 
 Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
-DATASET AND ATTRIBUTES
+## DATASET AND ATTRIBUTES
 
 Our dataset includes 80 fields spanning over 11 categories which are,
 
@@ -26,7 +26,7 @@ From the original Data set, we have extracted data that are significant for our 
 
 after that the reduced data set contained, 80988 Rows and 26 Fields.
 
-FIELDS
+## FIELDS
 
 <table align="center">
 	<tr align="center">
@@ -139,14 +139,14 @@ FIELDS
 	</tr>
 </table>
 
-TYPES OF DELAY
+## TYPES OF DELAY
 
 ASPM records minutes of delay for five possible causes of flight arrival delays: carrier, weather,
 NAS, security, and late arrival. The data are provided by the Bureau of Transportation Statistics(BTS)
 for  ASQP  flights  only.  These  causes  of  delay  were  determined  by  the  Department  of
 Transportation.
 
-CARRIER DELAY
+### CARRIER DELAY
 Carrier  delay  is  within  the  control  of  the  air  carrier.  Examples  of  occurrences  that  may
 determine  carrier  delay  are:  aircraft  cleaning,  aircraft  damage,  awaiting  the  arrival  of
 connecting passengers or crew, baggage, bird strike, cargo loading, catering, computer, outage
@@ -155,21 +155,22 @@ engineering  inspection,  fueling,  handling  disabled  passengers,  late  crew,
 maintenance, oversales, potable water servicing, removal of unruly passenger, slow boarding
 or seating, stowing carryon baggage, weight and balance delays.
 
-LATE ARRIVAL DELAY
+### LATE ARRIVAL DELAY
 Arrival delay at an airport due to the late arrival of the same aircraft at a previous airport. The
 ripple effect of an earlier delay at downstream airports is referred to as delay propagation.
 
-NAS DELAY
+### NAS DELAY
 Delay that is within the control of the National Airspace System (NAS) may include: nonextreme
 weather conditions, airport operations, heavy traffic volume, air traffic control, etc. Delays that
 occur after Actual Gate Out are usually attributed to the NAS and are also reported through
 OPSNET.
 
-SECURITY DELAY
+### SECURITY DELAY
 Security  delay  is  caused  by  evacuation  of  a  terminal  or  concourse,  reboarding  of  aircraft
 because of security breach, inoperative screening equipment and/or long lines more than 29
 minutes at screening areas.
-WEATHER DELAY
+
+### WEATHER DELAY
 Weather delay is caused by extreme or hazardous weather conditions that are forecasted or
 manifest themselves on point of departure, enroute, or on point of arrival.
 
@@ -177,7 +178,7 @@ manifest themselves on point of departure, enroute, or on point of arrival.
 
 The above pie chart depicts the effect of each type of delays in our data set. Based onthe  above analysis, the late aircraft delay (38.6%), the  Carrier delay (34%)  and NASdelay  (22.6%)  consists  of  most  of  the  delays.  It  is  important  that  the  delays  due  toweather  conditions  is  4.8%  which  is  significantly  less.  Both  Late  Aircraft  delay  andCarrier delays are directly connected to the performance of carrier, so it is evident thatthis  analysis  can  provide  insights  for  the  evaluation  of  carrier  and  can  be  used  forfurther improvement.
 
-RANKING SYSTEM
+## RANKING SYSTEM
 
 To obtain a meaningful and efficient ranking system the following data were considered:
 
@@ -208,27 +209,27 @@ where a is the product of operated flights, total volume of flights and the flig
 the product of arrival delay, average taxi in and taxi out times. The values of variable a were
 directly proportional to Score and the values of b were inversely proportional to score.
 
-INSIGHTS AND ANALYSIS
+## INSIGHTS AND ANALYSIS
 
-PLOTTING AIRLINE ROUTE OF ENTIRE DATASET
+### PLOTTING AIRLINE ROUTE OF ENTIRE DATASET
 ![Image31](viz/fullmap.png)
 
-PLOTTING OF ROUTES WITH NO DELAYS
+### PLOTTING OF ROUTES WITH NO DELAYS
 ![Image32](viz/no delay.png)
 
-DISTANCE AGAINST ARRIVAL AND DEPRATURE DELAYS
+### DISTANCE AGAINST ARRIVAL AND DEPRATURE DELAYS
 ![Image40](viz/delaydist.png)
 
 From the graph, it is evident that distance of flight doesn’t have much impact on the delays, even 
 though lower distance flight shows relatively higher delay. There for, we can assume that longer
 flights might have makeup the delayed minutes during flight.
 
-SCHEDULED VS ELAPSED TIME OF FLIGHT
+### SCHEDULED VS ELAPSED TIME OF FLIGHT
 ![Image43](viz/elapsed.png)
 
 From the Graph, we can see that all carriers have completed the flight before scheduled time.
 
-TOTAL SCHEDULED VS CANCELLED
+### TOTAL SCHEDULED VS CANCELLED
 ![Image46](viz/cancellation.png)
 
 Expresjet Airline and Frontier Airlines has the highest rate of cancellation, which later going to effect
@@ -236,7 +237,7 @@ on their rank. From the graph, we can see that American Airlines and Southwest h
 amount of flights and very less cancellation. From these we can say that their service quality is high
 and they will be securing high ranks.
 
-DELAY CATEGORIES OF EACH CARRIER
+### DELAY CATEGORIES OF EACH CARRIER
 
 From the above bar chart, in each category of delay; American Airlines, Alaskan Airlines, United Airlines
 and Southwest airlines has scored very less delays. Fortier Airlines has very high late aircraft delay,
@@ -248,21 +249,21 @@ From the below graph, it is evident that Fortier airlines has the highest sum of
 And Alaskan Airlines and southwest airlines has lowest.
 ![Image50](viz/delaybycar.png)
 
-PERFORMANCE BASED ON ARRIVAL DELAY
+### PERFORMANCE BASED ON ARRIVAL DELAY
 ![Image53](viz/performance.png)
 
 Above, performance graph show that Delta Airlines, united airlines have higher percentage of on
 time or early arrival with around 70%. Forntier airlines and skywest Airlines are the low scorers with
 around 50% of on time or early arrival.
 
-FLIGHT VOLUME / TOTAL NUMBER OF FLIGHTS FROM EACH CARRIER
+### FLIGHT VOLUME / TOTAL NUMBER OF FLIGHTS FROM EACH CARRIER
 ![Image56](viz/flightvolume.png)
 
 We can see that American Airlines (30.4%) and Southwest airlines (28.3 %) together have the  lion
 share of flights to and from TEXAS. Frontier Airlines and JetBlue Airways have the least number of
 flights.
 
-FLIGHT SPEED
+### FLIGHT SPEED
 ![Image59](viz/flyspeed.png)
 
 Based on the violin plot, we can see that in average, most flying speed across airlines are close to
@@ -271,7 +272,7 @@ simply looking at the data shape distribution). The fastest service is offered b
 It is interesting to see that, in some rare cases, an aircraft can go as high as 800 miles per hour in
 average during a flight trip.
 
-AVERAGE ARRIVAL DELAY VS DEPARTURE DELAY
+### AVERAGE ARRIVAL DELAY VS DEPARTURE DELAY
 ![Image62](viz/arrvsdep.png)
 
 Based on this analysis, we can see that all the lines have longer departure delays than arrival delays,
@@ -281,34 +282,34 @@ Skywest Airlines and Frontier Airlines are among the longest arrival and departu
 worth noting that Alaska Airlines is the only airline among all to arrive the destination earlier than
 scheduled in average.
 
-RATIO OF OPERATED AND SCHEDULED FLIGHTS
+### RATIO OF OPERATED AND SCHEDULED FLIGHTS
 ![Image65](viz/ratio_sch_op.png)
 
 From the graph, we can see that about 98% of scheduled flights are operated, with Expressjet Airlines
 with the lowest and Alaskan Airlines with the highest.
 
-MEAN TAXI IN AND TAXI OUT
+### MEAN TAXI IN AND TAXI OUT
 ![Image68](viz/taxi.png)
 
 Interestingly, we can see that overall taxi in time is less than taxi out time for all the airlines. All airlines
 have an average taxi_in time less than 10 minutes except Frontier Airlines, while all taxi out time are
 greater than 10 minutes. Also, it seems Southwest has the shortest taxi-in and taxi-out.
 
-ANALYSIS RESULT
+## ANALYSIS RESULT
 
 We have 6 variables which decide  score. The score is proportional to a subset (a) of the variables
 whereas being inversely proportional to a different subset (b) of the variables. We used the following
 formula for calculating score on normalized data which we scaled between 1 and 2.
 
 <table align="center">
-	<tr align="center">
+	<tr align="left">
 		<td>CARRIER</td>
 		<td>RATIO_OP _SCH</td>
 		<td>FLIGHT_S PEED</td>
 		<td>ARRIVAL_D ELAY</td>
 		<td>FLIGHTS_VOL UME</td>
 		<td>TAXI_IN</td>
-		<td>TAXI_OU T</td>
+		<td>TAXI_OUT</td>
 	</tr>
 	<tr align="center">
 		<td>Alaska Airlines Inc.</td>
@@ -421,7 +422,7 @@ Score = a/(1+b),
 
 A higher score indicates a better rank.
 
-RANKING
+### RANKING
 
 Based on the score, below are our ranking of Carriers, to and from Texas, Operated during Jan 2017.
 
@@ -444,105 +445,6 @@ other carriers and secured rank 1.
 
 This lower scored carrier can improve their performance based on this insight and increase quality of
 service and thereby gain customer satisfaction.
-
-<table align="center">
-	<tr align="center">
-		<td>CARRIER</td>
-		<td>RATIO_OP_SCH</td>
-		<td>FLIGHT_SPEED</td>
-		<td>ARRIVAL_DELAY</td>
-		<td>FLIGHTS_VOLUME</td>
-		<td>TAXI_IN</td>
-	</tr>
-	<tr align="center">
-		<td>Southwest Airlines Co.</td>
-		<td>1.549244328</td>
-		<td>1.507375997</td>
-		<td>1.486462214</td>
-		<td>1.929285832</td>
-		<td>1.069609378</td>
-	</tr>
-	<tr align="center">
-		<td>United Air Lines Inc.</td>
-		<td>1.978557195</td>
-		<td>1.784826635</td>
-		<td>1.24498746</td>
-		<td>1.423499752</td>
-		<td>1.495306105</td>
-	</tr>
-	<tr align="center">
-		<td>Alaska Airlines Inc.</td>
-		<td>2</td>
-		<td>2</td>
-		<td>1</td>
-		<td>1.003223673</td>
-		<td>1.469513821</td>
-	</tr>
-	<tr align="center">
-		<td>American Airlines Inc.</td>
-		<td>1.657281463</td>
-		<td>1.641380791</td>
-		<td>1.464607739</td>
-		<td>2</td>
-		<td>1.718027285</td>
-	</tr>
-	<tr align="center">
-		<td>Virgin America</td>
-		<td>1.927850085</td>
-		<td>1.80040967</td>
-		<td>1.581637335</td>
-		<td>1.019796661</td>
-		<td>1.493109681</td>
-	</tr>
-	<tr align="center">
-		<td>Delta Air Lines Inc.</td>
-		<td>1.691794426</td>
-		<td>1.574900906</td>
-		<td>1.349132845</td>
-		<td>1.114151099</td>
-		<td>1.442462476</td>
-	</tr>
-	<tr align="center">
-		<td>JetBlue Airways</td>
-		<td>1.262804743</td>
-		<td>1.780685714</td>
-		<td>1.525411059</td>
-		<td>1.006406018</td>
-		<td>1</td>
-	</tr>
-	<tr align="center">
-		<td>Spirit Air Lines</td>
-		<td>1.321055248</td>
-		<td>1.708516905</td>
-		<td>1.613928843</td>
-		<td>1.063192263</td>
-		<td>1.661401389</td>
-	</tr>
-	<tr align="center">
-		<td>SkyWest Airlines Inc.</td>
-		<td>1.474325537</td>
-		<td>1.559848463</td>
-		<td>1.79949787</td>
-		<td>1.132087948</td>
-		<td>1.467007869</td>
-	</tr>
-	<tr align="center">
-		<td>ExpressJet Airlines Inc.</td>
-		<td>1</td>
-		<td>1</td>
-		<td>1.549748055</td>
-		<td>1.45404199</td>
-		<td>1.344297793</td>
-	</tr>
-	<tr align="center">
-		<td>Frontier Airlines Inc.</td>
-		<td>1.149548313</td>
-		<td>1.701109817</td>
-		<td>2</td>
-		<td>1</td>
-		<td>2</td>
-	</tr>
-</table>
 
 
 

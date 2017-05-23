@@ -6,7 +6,7 @@ on data on flights to and from Texas from Bureau of Transportation during Jan 20
 
 Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
-[Goto Code folder for SQL Queries and visualization in Python](airline-ranking/code)
+[Goto Code folder for SQL Queries and visualization in Python](code)
 
 ## DATASET AND ATTRIBUTES
 

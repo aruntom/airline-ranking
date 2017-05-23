@@ -6,6 +6,8 @@ on data on flights to and from Texas from Bureau of Transportation during Jan 20
 
 Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
+[Goto Code folder for SQL Queries and visualization in Python](airline-ranking/code)
+
 ## DATASET AND ATTRIBUTES
 
 Our dataset includes 80 fields spanning over 11 categories which are,
@@ -445,3 +447,4 @@ other carriers and secured rank 1.
 
 This lower scored carrier can improve their performance based on this insight and increase quality of
 service and thereby gain customer satisfaction.
+

@@ -6,6 +6,8 @@ on data on Domestic flights to and from Texas from Bureau of Transportation duri
 
 Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
+This is a primitive study on the topic for academic purpose.
+
 [Goto Code folder for SQL Queries and visualization in Python](code)
 
 ## DATASET AND ATTRIBUTES

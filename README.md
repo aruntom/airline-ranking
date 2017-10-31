@@ -2,7 +2,7 @@
 
 Insights on causes of flight delays and implementation of Airline carrier ranking (quality of service) system based
 
-on data on flights to and from Texas from Bureau of Transportation during Jan 2017.
+on data on Domestic flights to and from Texas from Bureau of Transportation during Jan 2017.
 
 Using Python, Pandas, PandaSQL, Geoplotlib, Matplotlib, Seaborn, etc.
 
